@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+body {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-cyan-500/20 bg-slate-900/40 backdrop-blur-xl;
+}
+
+.input-field {
+  @apply w-full rounded-lg border border-slate-700 bg-slate-950/80 px-4 py-2.5 text-white outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/30;
+}
+
+.btn-primary {
+  @apply rounded-lg border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 px-6 py-2.5 font-mono text-sm font-semibold uppercase tracking-wider text-cyan-100 transition hover:border-cyan-300/70 hover:shadow-[0_0_24px_rgba(6,182,212,0.3)] disabled:opacity-50;
+}
+
+.btn-secondary {
+  @apply rounded-lg border border-slate-600 bg-slate-800/80 px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-slate-500 hover:bg-slate-700/80;
+}
